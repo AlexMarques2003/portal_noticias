@@ -10,7 +10,6 @@ var server = http.createServer(function(req,res){
     } else {
         res.end("<html><body>Portal de notícias</body></html>");
     }
-
     
 });
 
