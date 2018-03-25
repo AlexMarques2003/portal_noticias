@@ -1,14 +1,12 @@
-var express = require('express');
-var app = express();
+var app = require('./config/server');
 
-app.get('/', function(req,res){
-    res.send('<html><body>Portal de noticias</body></html>')
-})
+var rotaNoticias = require('./app/routes/noticias')(app);
+var rotaHome = require('./app/routes/home')(app);
+var rotaHome = require('./app/routes/home')(app);
 
-app.get('/tecnologia',function(req,res){
-    res.end('<html><body>Tecnologia</body></html>');
-})
+var rotaFormInclusaoNoticias = require('./app/routes/formulario_inclusao_noticia')
+rotaFormInclusaoNoticias(app);
 
 app.listen(3000, function(){
-    console.log('Servidor rodando com express');
+    console.log("Servidor online");
 })
